@@ -13,17 +13,17 @@ var cardName2 = document.querySelector("#cardName2");
 var randomNum = arr => arr[Math.floor(Math.random() * gameArr.length)];
 
 function gameStart(e) {
+   
+    if (gameArr.indexOf(user) === -1) {
+      alert("Please choose 'R S P' button");
+      return;
+   }
+   
    var user = e.key;
    var comp = randomNum(gameArr);
 
    card1.src = `./img/${user}.png`;
    card2.src = `./img/${comp}.png`;
-
-   if (gameArr.indexOf(user) === -1) {
-      alert("Please choose 'R S P' button");
-      return;
-   }
-
 
    if (user === "r" && comp === "s") {
       // console.log("User Win!!!");
