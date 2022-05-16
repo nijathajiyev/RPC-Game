@@ -14,12 +14,12 @@ var randomNum = arr => arr[Math.floor(Math.random() * gameArr.length)];
 
 function gameStart(e) {
    
+    var user = e.key;
+   
     if (gameArr.indexOf(user) === -1) {
       alert("Please choose 'R S P' button");
       return;
    }
-   
-   var user = e.key;
    var comp = randomNum(gameArr);
 
    card1.src = `./img/${user}.png`;
